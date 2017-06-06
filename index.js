@@ -23,7 +23,7 @@ app.use(cacheControl({
 }));
 app.use(svg());
 
-app.all('/:initials', (req, res) => {
+app.all('/:initials?', (req, res) => {
   const params = Object.assign({}, req.query, req.body, req.params);
   res.svg(initar(params));
 });
